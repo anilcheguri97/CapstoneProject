@@ -45,8 +45,11 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("usersapi/addUser").permitAll()
-                        .requestMatchers("/api/hello").hasRole("USER")
+                        .requestMatchers("/usersapi/addUser").permitAll()
+                        .requestMatchers("/customer/welcome").permitAll()
+                        .requestMatchers("/actuator/refresh").permitAll()
+                        .requestMatchers("/actuator/health").permitAll()
+                        .requestMatchers("/customer/hello").hasRole("USER")
                         .anyRequest().authenticated()
                 )
                 .formLogin(withDefaults()); // Default login page

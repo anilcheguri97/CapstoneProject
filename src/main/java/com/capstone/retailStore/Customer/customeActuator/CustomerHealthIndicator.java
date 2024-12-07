@@ -21,13 +21,13 @@ public class CustomerHealthIndicator implements HealthIndicator {
         LOGGER.warn("customized health indicator is in warn");
         LOGGER.error("customized health indicator is in error");
         if(customerRepository.count()>1) {
-            builder.down();
+            builder.up();
             LOGGER.info("customized health indicator is down in info");
             LOGGER.debug("customized health indicator is down in debug");
             LOGGER.warn("customized health indicator is down in warn");
             LOGGER.error("customized health indicator is down in error");
         }else {
-            builder.up();
+            builder.down();
             LOGGER.info("customized health indicator is up in info");
             LOGGER.debug("customized health indicator is up in debug");
             LOGGER.warn("customized health indicator is up in warn");

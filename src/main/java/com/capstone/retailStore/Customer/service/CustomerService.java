@@ -3,6 +3,7 @@ package com.capstone.retailStore.Customer.service;
 import com.capstone.retailStore.Customer.Model.Customer;
 import com.capstone.retailStore.Customer.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
